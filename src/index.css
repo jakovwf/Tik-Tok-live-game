@@ -1,0 +1,110 @@
+/* OBAVEZNO: Ovo širi aplikaciju na 100% ekrana */
+html, body, #root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* Skriva scrollbar */
+  background-color: #1a1a1a;
+}
+
+/* --- UI CONTAINER --- */
+.ui-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* --- SCORE BOARD --- */
+.score-board {
+  display: flex;
+  justify-content: space-between;
+  padding: 40px;
+  font-size: 40px;
+  font-weight: 900;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.score-blue { color: #3b82f6; }
+.score-red { color: #ef4444; }
+
+/* --- TEST PANEL --- */
+.test-panel {
+  position: absolute;
+  bottom: 50px; /* Podignuto malo od dna */
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  border-radius: 20px;
+  pointer-events: auto;
+  backdrop-filter: blur(5px);
+  z-index: 100; /* Da bude sigurno iznad svega */
+}
+
+.team-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: center;
+}
+
+.team-controls h3 {
+  color: white;
+  margin: 0 0 5px 0;
+  font-size: 14px;
+}
+
+.team-controls button {
+  padding: 10px 20px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.blue-controls button { background-color: #3b82f6; color: white; }
+.red-controls button { background-color: #ef4444; color: white; }
+
+.vs-badge {
+  font-size: 30px;
+  font-weight: 900;
+  color: white;
+  font-style: italic;
+  opacity: 0.5;
+}
+
+/* --- SCREENS --- */
+.overlay-screen {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.7);
+  pointer-events: auto;
+  color: white;
+}
+
+.winner-text {
+  font-size: 80px;
+  font-weight: 900;
+  margin-bottom: 20px;
+}
+
+.btn-restart {
+  padding: 15px 40px;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+}
